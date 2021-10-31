@@ -15,12 +15,8 @@ let keyReturn = (event) =>{
 // Write a named function with event handler properties
 
 const pressKeys = function(note) {
-  note.onmousedown = function() {
-    keyPlay();
-  }
-   note.onmouseup = function()  {
-    keyReturn();
-  }
+ note.addEventListener("mousedown",keyPlay);
+  note.addEventListener("mouseup", keyReturn);
 }
 // Write a loop that runs the array elements through the function
 notes.forEach(pressKeys);
